@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast ISBN Matcher</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1, h2 { color: #1a253c; }
+        .section { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .btn { padding: 15px 30px; font-size: 18px; border-radius: 6px; cursor: pointer; border: 1px solid transparent; margin-right: 15px; margin-bottom: 15px; }
+        .btn-primary { background-color: #007bff; border-color: #007bff; color: white; }
+        .btn:disabled { background-color: #6c757d; cursor: not-allowed; opacity: 0.65; }
+        .status-success { color: #28a745; font-weight: bold; font-size: 16px; }
+        .status-error { color: #dc3545; font-weight: bold; font-size: 16px; }
+        .status-warning { color: #ffc107; font-weight: bold; font-size: 16px; }
+        .features { background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Fast ISBN Matcher</h1>
+        <p><strong>Optimized for speed with tqdm progress bars and batch processing</strong></p>
+
+        <div class="section">
+            <h2>Super Fast Retry</h2>
+            <p>Process failed matches with maximum speed and minimal output.</p>
+            
+            <button id="fast-retry-btn" class="btn btn-primary">⚡ Fast Retry (Clean Output + Progress Bar)</button>
+            
+            <div id="status-container" style="margin-top: 20px;"></div>
+            
+            <div class="features">
+                <h3>Fast Processing Features:</h3>
+                <ul>
+                    <li>✅ <strong>Batch processing</strong> for maximum speed</li>
+                    <li>📊 <strong>tqdm progress bars</strong> with real-time stats</li>
+                    <li>🎯 <strong>Exact title matching</strong> catches obvious matches instantly</li>
+                    <li>🔍 <strong>Multiple search strategies</strong> per book (title-only, author variations)</li>
+                    <li>💾 <strong>Auto-save</strong> every 100 books</li>
+                    <li>📈 <strong>Live success rate</strong> tracking</li>
+                    <li>🚀 <strong>Minimal output</strong> - no verbose per-book details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fastRetryBtn = document.getElementById('fast-retry-btn');
+        const statusContainer = document.getElementById('status-container');
+
+        fastRetryBtn.addEventListener('click', async () => {
+            statusContainer.innerHTML = '<p class="status-warning">⚡ Starting fast batch processing...</p>';
+            fastRetryBtn.disabled = true;
+            
+            try {
+                const response = await fetch('/api/fast-retry');
+                const result = await response.json();
+                
+                if (result.error) {
+                    statusContainer.innerHTML = `<p class="status-error">❌ Error: ${result.error}</p>`;
+                } else {
+                    statusContainer.innerHTML = `<p class="status-success">🎉 ${result.message}</p>`;
+                }
+            } catch (error) {
+                console.error("Processing failed:", error);
+                statusContainer.innerHTML = '<p class="status-error">❌ A client-side error occurred.</p>';
+            } finally {
+                fastRetryBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+PRODUCT CATALOGUE PROCESSING SUMMARY
+==================================================
+
+Total files processed: 7
+Total rows processed: 10592
+Total successes: 7524
+Total failures: 3068
+Total no Handle/ISBN: 0
+Overall success rate: 71.0%
+
+DETAILED RESULTS BY FILE:
+------------------------------
+File: export_1_part_1_fixed.csv
+  Rows: 1950
+  Successes: 1921
+  Failures: 29
+  No Handle: 0
+  Success rate: 98.5%
+
+File: export_2_part_2_fixed.csv
+  Rows: 1475
+  Successes: 1317
+  Failures: 158
+  No Handle: 0
+  Success rate: 89.3%
+
+File: export_3_fixed.csv
+  Rows: 1950
+  Successes: 559
+  Failures: 1391
+  No Handle: 0
+  Success rate: 28.7%
+
+File: export_1_part_2_fixed.csv
+  Rows: 1950
+  Successes: 1912
+  Failures: 38
+  No Handle: 0
+  Success rate: 98.1%
+
+File: export_5_fixed.csv
+  Rows: 442
+  Successes: 431
+  Failures: 11
+  No Handle: 0
+  Success rate: 97.5%
+
+File: export_2_part_1_fixed.csv
+  Rows: 1475
+  Successes: 1161
+  Failures: 314
+  No Handle: 0
+  Success rate: 78.7%
+
+File: export_4_fixed.csv
+  Rows: 1350
+  Successes: 223
+  Failures: 1127
+  No Handle: 0
+  Success rate: 16.5%
+

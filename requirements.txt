@@ -1,0 +1,9 @@
+Flask
+supabase
+python-dotenv
+gunicorn
+openai
+requests
+pandas
+openpyxl
+tqdm

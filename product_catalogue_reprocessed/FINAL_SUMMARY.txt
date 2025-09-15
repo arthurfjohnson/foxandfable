@@ -1,0 +1,51 @@
+FINAL PRODUCT CATALOGUE PROCESSING SUMMARY
+==================================================
+
+Total records processed: 10,592
+Total matches found: 7,833 (74.0%)
+Total missing records: 2,759 (26.0%)
+
+DETAILED RESULTS BY FILE:
+------------------------------
+File: export_1_part_1_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 1,950
+  Matches: 1,931 (99.0%)
+  Missing: 19 (1.0%)
+  No Handle: 0
+
+File: export_1_part_2_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 1,950
+  Matches: 1,926 (98.8%)
+  Missing: 24 (1.2%)
+  No Handle: 0
+
+File: export_2_part_1_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 1,475
+  Matches: 1,193 (80.9%)
+  Missing: 282 (19.1%)
+  No Handle: 0
+
+File: export_2_part_2_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 1,475
+  Matches: 1,359 (92.1%)
+  Missing: 116 (7.9%)
+  No Handle: 0
+
+File: export_3_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 1,950
+  Matches: 663 (34.0%)
+  Missing: 1,287 (66.0%)
+  No Handle: 0
+
+File: export_4_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 1,350
+  Matches: 330 (24.4%)
+  Missing: 1,020 (75.6%)
+  No Handle: 0
+
+File: export_5_fixed_with_gardner_data_reprocessed.xlsx
+  Total: 442
+  Matches: 431 (97.5%)
+  Missing: 11 (2.5%)
+  No Handle: 0
+

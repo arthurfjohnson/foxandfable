@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Titles ISBN Matcher</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1, h2 { color: #1a253c; }
+        .section { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        
+        /* Buttons */
+        .btn { padding: 12px 20px; font-size: 16px; border-radius: 4px; cursor: pointer; border: 1px solid transparent; margin-right: 10px; margin-bottom: 10px; }
+        .btn-success { background-color: #28a745; border-color: #28a745; color: white; }
+        .btn-warning { background-color: #ffc107; border-color: #ffc107; color: #212529; }
+        .btn-info { background-color: #17a2b8; border-color: #17a2b8; color: white; }
+        .btn-danger { background-color: #dc3545; border-color: #dc3545; color: white; }
+        .btn:disabled { background-color: #6c757d; cursor: not-allowed; opacity: 0.65; }
+
+        /* Search & Filters */
+        .search-bar { display: flex; margin-bottom: 20px; }
+        #search-input { flex-grow: 1; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; }
+        #search-button { padding: 12px 20px; font-size: 16px; border: 1px solid #007bff; background-color: #007bff; color: white; cursor: pointer; border-radius: 0 4px 4px 0; }
+        .filter-controls { margin-bottom: 20px; }
+        .filter-btn { padding: 8px 15px; font-size: 14px; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; border-radius: 4px; margin-right: 10px; }
+        .filter-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
+        
+        /* Results */
+        .book-item { padding: 15px; border-top: 1px solid #eee; }
+        .book-item:first-child { border-top: none; }
+        
+        /* Progress indicators */
+        .progress-info { background-color: #e3f2fd; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .progress-bar { width: 100%; height: 20px; background-color: #e0e0e0; border-radius: 10px; overflow: hidden; margin-top: 10px; }
+        .progress-fill { height: 100%; background-color: #4caf50; transition: width 0.3s ease; }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
+        .modal-content { background-color: #fefefe; padding: 20px 30px; border-radius: 8px; width: 80%; max-width: 600px; position: relative; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        .modal-close { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+        
+        /* Status indicators */
+        .status-success { color: #28a745; font-weight: bold; }
+        .status-error { color: #dc3545; font-weight: bold; }
+        .status-warning { color: #ffc107; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 Individual Titles ISBN Matcher</h1>
+        <p><strong>Specialized app for matching individual_titles.xlsx using only title and author data</strong></p>
+
+        <div class="section">
+            <h2>Batch Processing for Individual Titles</h2>
+            <p>Process your individual_titles.xlsx file to find matching ISBN13 codes. This app uses batched AI requests for improved speed and only considers title and author fields.</p>
+            
+            <div class="progress-info" id="progress-info" style="display: none;">
+                <div id="progress-text">Processing...</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+            
+            <button id="process-individual-btn" class="btn btn-success">Process Individual Titles</button>
+            <button id="retry-failed-individual-btn" class="btn btn-warning">Retry Failed (Author Search)</button>
+            <button id="intelligent-retry-btn" class="btn btn-info">🧠 Intelligent Retry (AI Knowledge)</button>
+            <button id="web-enhanced-retry-btn" class="btn btn-danger">🌐 Web-Enhanced Retry (Internet Search)</button>
+            
+            <div id="ai-status-container" style="margin-top: 20px; font-weight: bold;"></div>
+            
+            <div class="section" style="margin-top: 20px; background-color: #f8f9fa;">
+                <h3>Processing Information</h3>
+                <ul>
+                    <li><strong>Input:</strong> individual_titles.xlsx (title, author columns)</li>
+                    <li><strong>Output:</strong> individual_titles_with_isbns.xlsx (XLSX format)</li>
+                    <li><strong>Matching:</strong> First by title+author, then by author only for failed matches</li>
+                    <li><strong>Speed:</strong> Batched AI processing (10 requests per batch)</li>
+                    <li><strong>🧠 Intelligent Retry:</strong> Uses AI book knowledge to handle author variations, box sets, and series</li>
+                    <li><strong>Result:</strong> ISBN13 mapping with match status</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section manual-search-area">
+            <h2>Manual Search & Verification</h2>
+            <p>Use this section to manually search for titles and verify results.</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for a title, author, etc...">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-format="all">All</button>
+                <button class="filter-btn" data-format="paperback">Paperback</button>
+                <button class="filter-btn" data-format="hardback">Hardback</button>
+                <button class="filter-btn" data-format="other">Other</button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <div id="description-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Description</h2>
+            <div id="modal-text" style="white-space: pre-wrap; max-height: 60vh; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script>
+        // --- DOM References ---
+        const processIndividualBtn = document.getElementById('process-individual-btn');
+        const retryFailedIndividualBtn = document.getElementById('retry-failed-individual-btn');
+        const intelligentRetryBtn = document.getElementById('intelligent-retry-btn');
+        const webEnhancedRetryBtn = document.getElementById('web-enhanced-retry-btn');
+        const allProcessButtons = [processIndividualBtn, retryFailedIndividualBtn, intelligentRetryBtn, webEnhancedRetryBtn];
+        const aiStatusContainer = document.getElementById('ai-status-container');
+        const progressInfo = document.getElementById('progress-info');
+        const progressText = document.getElementById('progress-text');
+        const progressFill = document.getElementById('progress-fill');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const resultsContainer = document.getElementById('search-results');
+        const modal = document.getElementById('description-modal');
+        const modalText = document.getElementById('modal-text');
+        const closeModalBtn = document.querySelector('.modal-close');
+        const filterControls = document.querySelector('.filter-controls');
+
+        // --- Event Listeners for Batch Processing ---
+        processIndividualBtn.addEventListener('click', () => handleProcessingRequest('/api/process-individual-titles', 'Processing individual titles with batched AI requests...'));
+        retryFailedIndividualBtn.addEventListener('click', () => handleProcessingRequest('/api/retry-failed-individual', 'Retrying failed matches using author-only search...'));
+        intelligentRetryBtn.addEventListener('click', () => handleProcessingRequest('/api/intelligent-retry', '🧠 Using AI book knowledge to intelligently retry failed matches...'));
+        webEnhancedRetryBtn.addEventListener('click', () => handleProcessingRequest('/api/web-enhanced-retry', '🌐 Using internet search and AI to find the most difficult matches...'));
+
+        async function handleProcessingRequest(apiUrl, statusMessage) {
+            aiStatusContainer.innerHTML = `<p class="status-warning">${statusMessage}</p>`;
+            progressInfo.style.display = 'block';
+            progressText.textContent = statusMessage;
+            progressFill.style.width = '10%';
+            
+            allProcessButtons.forEach(btn => btn.disabled = true);
+            
+            try {
+                const response = await fetch(apiUrl);
+                progressFill.style.width = '50%';
+                
+                const result = await response.json();
+                progressFill.style.width = '100%';
+                
+                if (result.error) {
+                    aiStatusContainer.innerHTML = `<p class="status-error">Error: ${result.error}</p>`;
+                    progressText.textContent = 'Processing failed';
+                } else {
+                    aiStatusContainer.innerHTML = `<p class="status-success">${result.message}</p>`;
+                    progressText.textContent = 'Processing completed successfully';
+                }
+            } catch (error) {
+                console.error("Processing failed:", error);
+                aiStatusContainer.innerHTML = '<p class="status-error">A client-side error occurred. Check the console.</p>';
+                progressText.textContent = 'Processing failed';
+                progressFill.style.width = '0%';
+            } finally {
+                allProcessButtons.forEach(btn => btn.disabled = false);
+                setTimeout(() => {
+                    progressInfo.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // --- Manual Search & Filter Listeners ---
+        searchButton.addEventListener('click', () => performSearch(searchInput.value));
+        searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(e.target.value); });
+        
+        filterControls.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'BUTTON') return;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            const format = e.target.dataset.format;
+            document.querySelectorAll('.book-item').forEach(item => {
+                const itemFormat = (item.dataset.format || '').toLowerCase();
+                item.style.display = (format === 'all' || itemFormat.includes(format)) ? 'block' : 'none';
+            });
+        });
+
+        // --- Modal Listeners ---
+        closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+        window.addEventListener('click', (e) => {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // --- Main Manual Search Function ---
+        async function performSearch(query) {
+            if (!query) {
+                resultsContainer.innerHTML = '<p>Please enter a search term.</p>';
+                return;
+            }
+            resultsContainer.innerHTML = '<p>Loading...</p>';
+            try {
+                const response = await fetch(`/search?q=${encodeURIComponent(query)}`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const results = await response.json();
+                
+                resultsContainer.innerHTML = '';
+                if (results.length === 0) {
+                    resultsContainer.innerHTML = '<p>No books found.</p>';
+                    return;
+                }
+
+                results.forEach(book => {
+                    const bookElement = document.createElement('div');
+                    bookElement.className = 'book-item';
+                    bookElement.dataset.format = book.format || 'other';
+                    bookElement.innerHTML = `
+                        <h2>${book.title || 'No Title'}</h2>
+                        <p><strong>Authors:</strong> ${book.authors || 'N/A'}</p>
+                        <p><strong>ISBN:</strong> ${book.isbn13 || 'N/A'}</p>
+                        <p><strong>Format:</strong> ${book.format || 'N/A'}</p>
+                        <button class="view-desc-btn">View Description</button>
+                        <button class="copy-btn" data-isbn="${book.isbn13 || ''}">Copy ISBN</button>
+                    `;
+                    
+                    const viewDescBtn = bookElement.querySelector('.view-desc-btn');
+                    viewDescBtn.addEventListener('click', () => {
+                        modalText.innerHTML = book.description || 'No description available.';
+                        modal.style.display = 'flex';
+                    });
+
+                    resultsContainer.appendChild(bookElement);
+                });
+
+                document.querySelector('.filter-btn[data-format="paperback"]').click();
+
+            } catch (error) {
+                console.error("Search failed:", error);
+                resultsContainer.innerHTML = '<p>Sorry, an error occurred while searching.</p>';
+            }
+        }
+
+        // --- Global Event Listener for dynamic Copy buttons ---
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('copy-btn')) {
+                const isbnToCopy = event.target.dataset.isbn;
+                if (isbnToCopy) {
+                    navigator.clipboard.writeText(isbnToCopy).then(() => {
+                        event.target.textContent = 'Copied!';
+                        setTimeout(() => { event.target.textContent = 'Copy ISBN'; }, 2000);
+                    });
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+Genre,Subgenre,Age
+Education & Reference,Phonics & Early Learning,3-5
+Education & Reference,Sticker & Activity Books,3-5
+Education & Reference,Handwriting Practice,6-8
+Education & Reference,Early Maths & Counting,6-8
+Education & Reference,Key Stage 1 Workbooks,6-8
+Education & Reference,Key Stage 2 SATS Revision,9-11
+Education & Reference,11+ Exam Practice,9-11
+Education & Reference,Times Tables & Maths Guides,9-11
+Education & Reference,Primary School Dictionary,9-11
+Education & Reference,Key Stage 3 Study Guides,12-15
+Education & Reference,GCSE Revision Guides,12-15
+Education & Reference,GCSE Textbooks & Workbooks,12-15
+Education & Reference,A-Level Study Guides,16+
+Education & Reference,UCAS & University Guides,16+
+Education & Reference,A-Level Textbooks,16+
+Education & Reference,Dictionaries & Thesauruses,
+Education & Reference,Atlases & World Maps,
+Education & Reference,Language Learning,
+Children's Fiction,Bath Books,0-2
+Children's Fiction,Board Books,0-2
+Children's Fiction,Cloth & Soft Books,0-2
+Children's Fiction,Sensory & Touch-and-Feel,0-2
+Children's Fiction,First Words & Pictures,0-2
+Children's Fiction,Lift-the-Flap,3-5
+Children's Fiction,Picture Storybooks,3-5
+Children's Fiction,Character-led Picture Books,3-5
+Children's Fiction,"Poetry, Anthologies & Rhymes",6-8
+Children's Fiction,Phonics-Based Early Readers,6-8
+Children's Fiction,First Chapter Books,6-8
+Children's Fiction,Illustrated Young Fiction,6-8
+Children's Fiction,Fantasy & Magic,9-11
+Children's Fiction,Adventure & Survival,9-11
+Children's Fiction,School Stories,9-11
+Children's Fiction,Humorous Fiction,9-11
+Children's Fiction,Animal Stories,9-11
+Children's Fiction,Historical Adventures,9-11
+Children's Fiction,Mystery & Detective,9-11
+Children's Fiction,Science Fiction,9-11
+Children's Fiction,Graphic Novels,9-11
+Children's Non-Fiction,General Knowledge & Encyclopedias,9-11
+Children's Non-Fiction,"History (Romans, Egyptians, Vikings)",9-11
+Children's Non-Fiction,Science & Nature,9-11
+Children's Non-Fiction,Biography for Children,9-11
+Teen & YA Fiction,Contemporary & Real-World Issues,12-15
+Teen & YA Fiction,High-Concept Fantasy,12-15
+Teen & YA Fiction,Dystopian & Sci-Fi Series,12-15
+Teen & YA Fiction,School & Friendship Stories,12-15
+Teen & YA Fiction,Thriller & Horror,12-15
+Teen & YA Fiction,Graphic Novels,12-15
+Teen & YA Fiction,Gritty & Issue-led Contemporary,12-15
+Teen & YA Fiction,Urban Fantasy,12-15
+Teen & YA Fiction,Crossover Fiction,12-15
+Teen & YA Fiction,LGBTQ+ Voices,12-15
+Teen & YA Fiction,Historical Fiction,12-15
+Teen & YA Fiction,Romance,12-15
+"Crime, Thriller & Mystery",Cosy Crime,
+"Crime, Thriller & Mystery",Tartan Noir,
+"Crime, Thriller & Mystery",Police Procedural,
+"Crime, Thriller & Mystery",Psychological Thriller,
+"Crime, Thriller & Mystery",Domestic Noir,
+"Crime, Thriller & Mystery",Hardboiled & Private Detective,
+"Crime, Thriller & Mystery",Legal & Political Thriller,
+"Crime, Thriller & Mystery",Spy & Espionage,
+"Crime, Thriller & Mystery",Historical Mystery,
+"Crime, Thriller & Mystery",Locked-Room Mystery,
+Fantasy,High & Epic Fantasy,
+Fantasy,Urban Fantasy,
+Fantasy,Romantasy,
+Fantasy,Dark Fantasy & Grimdark,
+Fantasy,Folk & Mythic Retelling,
+Fantasy,Historical Fantasy,
+Fantasy,Comic Fantasy,
+Fantasy,British Fantasy,
+Science Fiction,Space Opera,
+Science Fiction,Hard Sci-Fi,
+Science Fiction,Cyberpunk & Biopunk,
+Science Fiction,Dystopian & Post-Apocalyptic,
+Science Fiction,Steampunk,
+Science Fiction,Military Sci-Fi,
+Science Fiction,Climate Fiction (Cli-Fi),
+Science Fiction,Alternate History,
+Romance,Contemporary Romance,
+Romance,Romantic Comedy,
+Romance,"Historical Romance (Regency, etc.)",
+Romance,Chick Lit,
+Romance,Aga Saga,
+Romance,Paranormal & Urban Fantasy Romance,
+Romance,Erotic Romance,
+Romance,Romantic Suspense,
+Historical Fiction,Tudor & Stuart Period,
+Historical Fiction,Georgian & Regency Period,
+Historical Fiction,Victorian Era,
+Historical Fiction,World War I & II,
+Historical Fiction,Post-War Britain,
+Historical Fiction,Ancient & Classical,
+Historical Fiction,Biographical Fiction,
+General & Literary Fiction,Contemporary Fiction,
+General & Literary Fiction,Literary Fiction,
+General & Literary Fiction,Book Club Fiction,
+General & Literary Fiction,Family Saga,
+General & Literary Fiction,Uplit (Uplifting Fiction),
+General & Literary Fiction,Short Story Collection,
+General & Literary Fiction,Classic Literature,
+General & Literary Fiction,Modern Classics,
+General & Literary Fiction,Translated Fiction,
+Horror,Gothic,
+Horror,Psychological,
+Horror,Folk Horror,
+Horror,Supernatural & Ghost Stories,
+Horror,Body Horror,
+Horror,Cosmic & Lovecraftian,
+Humour,Comedian Autobiography,
+Humour,Panel Show & TV Tie-ins,
+Humour,Satirical Fiction,
+Humour,Parody,
+Humour,Light Humour & Observational Comedy,
+Graphic Novels & Comics,Superhero,
+Graphic Novels & Comics,Manga & Anime,
+Graphic Novels & Comics,Indie & Alternative,
+Graphic Novels & Comics,Literary & Memoir,
+Graphic Novels & Comics,Non-Fiction & Historical,
+Biography & Memoir,Royal Biographies,
+Biography & Memoir,Political Biography & Memoir,
+Biography & Memoir,Historical Biography,
+Biography & Memoir,Celebrity Autobiography,
+Biography & Memoir,Sports Biography,
+Biography & Memoir,Literary Biography,
+Biography & Memoir,Travel Memoir,
+History,British History,
+History,Social & Cultural History,
+History,Military History,
+History,Local & Family History,
+History,Ancient History,
+History,Medieval History,
+History,Modern History,
+History,Popular History,
+Food & Drink,British & Regional Cooking,
+Food & Drink,Celebrity Chef Cookbooks,
+Food & Drink,Baking,
+Food & Drink,Gastropub & Comfort Food,
+Food & Drink,International Cuisine,
+Food & Drink,Healthy Eating & Special Diets,
+Food & Drink,Vegetarian & Vegan,
+Food & Drink,"Wine, Beer & Spirits",
+Food & Drink,Food Writing & History,
+Gardening,Allotment & Vegetable Growing,
+Gardening,Garden Design,
+Gardening,Wildlife Gardening,
+Gardening,Houseplants,
+Gardening,Reference & Encyclopedias,
+Home & Crafts,DIY & Home Improvement,
+Home & Crafts,"Knitting, Sewing & Needlecraft",
+Home & Crafts,Upcycling & Restoration,
+Home & Crafts,Painting & Drawing,
+Home & Crafts,Calligraphy & Papercrafts,
+Science & Nature,Popular Science,
+Nature & Outdoors,UK Nature Writing,
+Nature & Outdoors,Ornithology & Birdwatching,
+Nature & Outdoors,"Walking, Hiking & Mountaineering Guides",
+Nature & Outdoors,Wild Swimming,
+Nature & Outdoors,UK Wildlife Field Guides,
+Nature & Outdoors,Astronomy & Stargazing,
+Nature & Outdoors,Environmentalism & Conservation,
+Sport,"Football (Club Histories, Annuals, Bios)",
+Sport,Cricket,
+Sport,Rugby Union & League,
+Sport,Formula 1 & Motorsport,
+Sport,Running & Fitness,
+Sport,Cycling,
+Sport,Golf,
+Sport,Tennis,
+Sport, Other Sports,
+"Mind, Body & Spirit",Philosophy,
+"Mind, Body & Spirit",Psychology,
+"Mind, Body & Spirit",Mythology,
+"Mind, Body & Spirit",Religion & Spirituality,
+"Mind, Body & Spirit",Meditation & Mindfulness,
+"Mind, Body & Spirit",Yoga,
+"Mind, Body & Spirit",Astrology & Esotericism,
+Self-Help,Productivity & Time Management,
+Self-Help,Personal Finance & Budgeting,
+Self-Help,Career Development,
+Self-Help,Relationships,
+Self-Help,Mental Health & Wellbeing,
+Business & Economics,Business Biographies,
+Business & Economics,Investing & Stocks,
+Business & Economics,Marketing & Sales,
+Business & Economics,Leadership & Management,
+Business & Economics,Start-ups & Entrepreneurship,
+Pop Culture & Media,Film & Cinema History,
+Pop Culture & Media,TV Tie-ins & Companion Guides,
+Pop Culture & Media,Music Biography & History,
+Pop Culture & Media,Video Games,
+Pop Culture & Media,"Puzzles, Crosswords & Quizzes",
+Travel,UK Travel Guides,
+Travel,European City Guides,
+Travel,Long-Haul Travel Guides,
+Travel,Travel Writing & Narratives,
+Art & Photography,Art History & Criticism,
+Art & Photography,Photography Technique,
+Art & Photography,Coffee Table & Art Books,
+Art & Photography,Architecture,
+Performing Arts,Theatre & Drama,
+Performing Arts,Plays & Screenplays,
+Poetry,Classic Poetry,
+Poetry,Contemporary Poetry,
+Poetry,Poetry Anthologies,
